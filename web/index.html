@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OCPE — Online C Program Evaluation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-row">
+      <div>
+        <h1>OCPE</h1>
+        <p>Online Program Evaluation System</p>
+      </div>
+      <div id="auth-bar" class="auth-bar">
+        <span id="user-label" style="display:none"></span>
+        <button id="login-btn" onclick="showAuth('login')">Login</button>
+        <button id="register-btn" onclick="showAuth('register')">Register</button>
+        <button id="logout-btn" style="display:none" onclick="logout()">Logout</button>
+        <button id="history-btn" style="display:none" onclick="showHistory()">My Submissions</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="auth-section" class="card" style="display:none">
+      <h2 id="auth-title">Login</h2>
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" id="auth-username" autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="auth-password" autocomplete="current-password">
+      </div>
+      <div class="actions">
+        <button id="auth-submit-btn" onclick="submitAuth()">Login</button>
+        <button onclick="hideAuth()">Cancel</button>
+      </div>
+      <p id="auth-error" class="error-text"></p>
+    </section>
+
+    <section id="history-section" class="card" style="display:none">
+      <h2>My Submissions</h2>
+      <div id="history-list">Loading...</div>
+      <button onclick="showProblems()">Back to Problems</button>
+    </section>
+
+    <section id="problems-section">
+      <h2>Problems</h2>
+      <div id="problems-list" class="card">Loading problems...</div>
+    </section>
+
+    <section id="editor-section" class="card" style="display:none">
+      <h2 id="problem-title"></h2>
+      <pre id="problem-description"></pre>
+      <div class="meta">
+        <span id="time-limit"></span>
+        <span id="memory-limit"></span>
+        <span id="test-count"></span>
+      </div>
+      <div class="form-group">
+        <label>Language</label>
+        <select id="language-select"></select>
+      </div>
+      <textarea id="source-code" spellcheck="false" placeholder="Write your code here..."></textarea>
+      <div class="actions">
+        <button id="submit-btn" onclick="submitCode()">Submit</button>
+        <button id="back-btn" onclick="showProblems()">Back</button>
+      </div>
+    </section>
+
+    <section id="result-section" class="card" style="display:none">
+      <h2>Submission Result</h2>
+      <div id="result-summary"></div>
+      <div id="result-details"></div>
+      <button onclick="showEditor()">Back to Editor</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>OCPE — Distributed evaluation with Redis queue, Linux sandbox &amp; multi-language support</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
