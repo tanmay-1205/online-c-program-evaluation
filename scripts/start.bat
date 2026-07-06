@@ -1,0 +1,3 @@
+@echo off
+echo Starting OCPE with Docker Compose...
+docker compose up --build
