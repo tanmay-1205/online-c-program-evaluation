@@ -1,0 +1,6 @@
+{
+  "title": "Stress Test — 120 Cases",
+  "description": "Given two integers a and b, print a*b + a - b.\n\nThis problem has 120 hidden test cases to stress-test the evaluation pipeline.\n\nInput: Two integers a and b\nOutput: a*b + a - b",
+  "time_limit_ms": 1000,
+  "memory_limit_mb": 256
+}

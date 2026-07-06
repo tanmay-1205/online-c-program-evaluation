@@ -1,0 +1,6 @@
+{
+  "title": "Sum of Two Numbers",
+  "description": "Given two integers a and b, print their sum.\n\nInput: Two integers a and b (-10^9 <= a, b <= 10^9)\nOutput: Print a single integer — the sum of a and b.",
+  "time_limit_ms": 1000,
+  "memory_limit_mb": 256
+}
