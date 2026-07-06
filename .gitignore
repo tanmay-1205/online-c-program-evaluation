@@ -15,5 +15,5 @@ data/
 .DS_Store
 Thumbs.db
 
-# Misc
-tests/
+# Misc (root-level only)
+/tests/
